@@ -136,8 +136,3 @@ func (c *RPCClient) ValidateAddress(address string) (validate models.ValidateAdd
 	err = c.call("validateaddress", params, &validate)
 	return validate, err
 }
-
-// func StakingWalletRPC() {
-//
-// 	return
-// }
