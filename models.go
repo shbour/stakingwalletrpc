@@ -24,20 +24,20 @@ type Info struct {
 }
 
 type Transaction struct {
-	Amount          float64              `json:"amount,omitempty"`
-	Fee             float64              `json:"fee,omitempty"`
-	Confirmations   uint64               `json:"confirmations"`
-	Bcconfirmations uint64               `json:"bcconfirmations,omitempty"`
-	Created         bool                 `json:"created,omitempty"`
-	Blockhash       string               `json:"blockhash,omitempty"`
-	Blockindex      uint8                `json:"blockindex,omitempty"`
-	Blocktime       uint64               `json:"blocktime,omitempty"`
-	TxID            string               `json:"txid,omitempty"`
-	Walletconflics  []WalletConflics     `json:"walletconflics,omitempty"`
-	Time            uint64               `json:"time,omitempty"`
-	Timereceived    uint64               `json:"timereceived,omitempty"`
-	Details         []TransactionDetails `json:"details,omitempty"`
-	Hex             string               `json:"hex,omitempty"`
+	Amount          float64               `json:"amount,omitempty"`
+	Fee             float64               `json:"fee,omitempty"`
+	Confirmations   uint64                `json:"confirmations"`
+	Bcconfirmations uint64                `json:"bcconfirmations,omitempty"`
+	Created         bool                  `json:"created,omitempty"`
+	Blockhash       string                `json:"blockhash,omitempty"`
+	Blockindex      uint8                 `json:"blockindex,omitempty"`
+	Blocktime       uint64                `json:"blocktime,omitempty"`
+	TxID            string                `json:"txid,omitempty"`
+	Walletconflics  *[]WalletConflics     `json:"walletconflics,omitempty"`
+	Time            uint64                `json:"time,omitempty"`
+	Timereceived    uint64                `json:"timereceived,omitempty"`
+	Details         *[]TransactionDetails `json:"details,omitempty"`
+	Hex             string                `json:"hex,omitempty"`
 }
 
 type TransactionDetails struct {
