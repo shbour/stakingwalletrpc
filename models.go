@@ -1,4 +1,4 @@
-package models
+package stakingwalletrpc
 
 type Info struct {
 	Balance           float64 `json:"balance,omitempty"`

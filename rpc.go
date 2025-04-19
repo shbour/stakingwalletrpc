@@ -6,8 +6,6 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-
-	"github.com/shbour/stakingwalletrpc/models"
 )
 
 // RPCClient struct to hold HTTP client and server details
@@ -107,13 +105,13 @@ func (c *RPCClient) Close() error {
 	return nil
 }
 
-func (c *RPCClient) GetInfo() (info models.Info, err error) {
+func (c *RPCClient) GetInfo() (info Info, err error) {
 	params := []interface{}{}
 	err = c.call("getinfo", params, &info)
 	return info, err
 }
 
-func (c *RPCClient) GetTransaction(txid string) (transaction models.Transaction, err error) {
+func (c *RPCClient) GetTransaction(txid string) (transaction Transaction, err error) {
 	params := []interface{}{txid}
 	err = c.call("gettransaction", params, &transaction)
 	return transaction, err
@@ -131,7 +129,7 @@ func (c *RPCClient) GetNewAddress(label string) (address string, err error) {
 	return address, err
 }
 
-func (c *RPCClient) ValidateAddress(address string) (validate models.ValidateAddress, err error) {
+func (c *RPCClient) ValidateAddress(address string) (validate ValidateAddress, err error) {
 	params := []interface{}{address}
 	err = c.call("validateaddress", params, &validate)
 	return validate, err
