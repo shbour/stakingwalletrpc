@@ -53,13 +53,13 @@ type WalletConflics struct {
 }
 
 type ValidateAddress struct {
-	IsValid      bool   `json:"isvalid"`
-	Address      string `json:"address"`
-	SciptPubKey  string `json:"scriptPubKey"`
-	IsMine       bool   `json:"ismine"`
-	IsWatchOnly  bool   `json:"iswatchonly"`
-	IsScript     bool   `json:"isscript"`
-	PubKey       string `json:"pubkey"`
-	IsCompressed bool   `json:"iscompressed"`
-	Label        string `json:"label"`
+	IsValid      bool    `json:"isvalid"`
+	Address      *string `json:"address"`
+	SciptPubKey  *string `json:"scriptPubKey"`
+	IsMine       *bool   `json:"ismine"`
+	IsWatchOnly  *bool   `json:"iswatchonly"`
+	IsScript     *bool   `json:"isscript"`
+	PubKey       *string `json:"pubkey"`
+	IsCompressed *bool   `json:"iscompressed"`
+	Label        *string `json:"label"`
 }
