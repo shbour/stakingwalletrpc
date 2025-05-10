@@ -105,30 +105,35 @@ func (c *RPCClient) Close() error {
 	return nil
 }
 
+// Gets wallet information 
 func (c *RPCClient) GetInfo() (info Info, err error) {
 	params := []interface{}{}
 	err = c.call("getinfo", params, &info)
 	return info, err
 }
 
+// Get transaction by TXID to fetch transaction information
 func (c *RPCClient) GetTransaction(txid string) (transaction Transaction, err error) {
 	params := []interface{}{txid}
 	err = c.call("gettransaction", params, &transaction)
 	return transaction, err
 }
 
+// Sends coins from the wallet to a specified address
 func (c *RPCClient) SendToAddress(address string, amount float64, comment string) (txid string, err error) {
 	params := []interface{}{address, amount, comment}
 	err = c.call("sendtoaddress", params, &txid)
 	return txid, err
 }
 
+// Generates a new address with the specified label
 func (c *RPCClient) GetNewAddress(label string) (address string, err error) {
 	params := []interface{}{"label"}
 	err = c.call("getnewaddress", params, &address)
 	return address, err
 }
 
+// Validates if the address is good for this type of wallet (a bitcoin address doesn't work for a ETH wallet)
 func (c *RPCClient) ValidateAddress(address string) (validate ValidateAddress, err error) {
 	params := []interface{}{address}
 	err = c.call("validateaddress", params, &validate)
